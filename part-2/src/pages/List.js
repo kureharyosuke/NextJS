@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 export default function List() {
   const [owners, setOwners] = useState([]);
 
-  useEffect(() => {
-    async function loadData() {
-      const response = await fetch("http://localhost:4001/vehicles");
-      const ownersList = await response.json();
-      setOwners(ownersList);
-    }
+  // useEffect(() => {
+  //   async function loadData() {
+  //     const response = await fetch("http://localhost:4001/vehicles");
+  //     const ownersList = await response.json();
+  //     setOwners(ownersList);
+  //   }
 
-    loadData();
-  }, []);
+  //   loadData();
+  // }, []);
 
   return (
     <div>
@@ -29,4 +29,20 @@ export default function List() {
   );
 }
 
-// List.getInitialProps = () => {};
+List.getInitialProps = async () => {
+  const response = await fetch("http://localhost:4001/vehicles");
+  const ownersList = await response.json();
+  return { ownersList: ownersList };
+};
+
+// export async function getStaticProps() {
+//   const response = await fetch("http://localhost:4001/vehicles");
+//   const ownersList = await response.json();
+//   return { ownersList: ownersList };
+// }
+
+// List.getStaticProps = async () => {
+//   const response = await fetch("http://localhost:4001/vehicles");
+//   const ownersList = await response.json();
+//   return { ownersList: ownersList };
+// };
