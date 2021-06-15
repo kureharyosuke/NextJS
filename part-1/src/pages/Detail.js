@@ -20,7 +20,7 @@ export default function Detail() {
       <div>
         {people.map((e) => (
           <div>
-            <Link as={`${e.v}/${e.name}`} href="/[vehicle]/[person]">
+            <Link as={`/${e.v}/${e.name}`} href="/[vehicle]/[person]">
               {/* <a href="car/bruno"></a> */}
               {/* <Link as="car/bruno" href="/[vehicle]/person" ERR: person을 대괄호안하면 다이나믹라우팅 안된다.>  파일명하고 동일하게!*/}
               <a>
@@ -34,7 +34,10 @@ export default function Detail() {
       <div>
         {product.map((e) => (
           <div>
-            <Link as={`/${e.productName}/${e.city}`} href="/[tour]/[city]">
+            <Link
+              as={`product/${e.productName}/${e.city}`}
+              href="product/[tour]/[city]"
+            >
               <a>
                 Navigate to {e.productName}'s {e.city}
               </a>

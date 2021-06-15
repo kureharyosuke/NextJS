@@ -1,3 +1,5 @@
-import { Homepage } from "../containers/Homepage";
+function Home() {
+  return <h1>homepage</h1>;
+}
 
-export default Homepage;
+export default Home;
