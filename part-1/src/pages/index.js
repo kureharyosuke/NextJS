@@ -1,3 +1,5 @@
-export default function Index() {
-  return <h1>Index Page</h1>;
+function Home() {
+  return <h1>homepage</h1>;
 }
+
+export default Home;
