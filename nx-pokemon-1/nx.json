@@ -29,6 +29,16 @@
   "projects": {
     "api": {
       "tags": []
+    },
+    "pokemon": {
+      "tags": []
+    },
+    "pokemon-e2e": {
+      "tags": [],
+      "implicitDependencies": ["pokemon"]
+    },
+    "shared-types": {
+      "tags": []
     }
   }
 }

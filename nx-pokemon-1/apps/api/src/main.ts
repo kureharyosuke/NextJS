@@ -18,7 +18,7 @@ app.get('/pokemon', (_, res) => {
 });
 
 app.get('/search', (req, res) => {
-  const q = ((req.query.q as string) ?? '').toLowerCase();
+  const q = ((req.query?.q as string) ?? '').toLowerCase();
   res.send(
     pokemon.filter(({ name: { english } }) => english.toLowerCase().includes(q))
   );
@@ -26,6 +26,6 @@ app.get('/search', (req, res) => {
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+  console.log(` ✅ Listening at http://localhost:${port}/api`);
 });
 server.on('error', console.error);
