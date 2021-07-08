@@ -36,6 +36,9 @@
     "pokemon-e2e": {
       "tags": [],
       "implicitDependencies": ["pokemon"]
+    },
+    "shared-types": {
+      "tags": []
     }
   }
 }
