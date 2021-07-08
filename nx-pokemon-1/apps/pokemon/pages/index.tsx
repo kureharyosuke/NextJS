@@ -12,6 +12,9 @@ export function Index() {
     fetch(`http://localhost:3333/search?q=${search}`)
       .then((resp) => resp.json())
       .then((data) => setPokemon(data));
+    // .catch((rejected) => {
+    //   console.log(rejected);
+    // });
   }, [search]);
 
   const onSetSearch = useCallback(
@@ -24,7 +27,11 @@ export function Index() {
   return (
     <div className={styles.page}>
       <input value={search} onChange={onSetSearch} />
-      <ul></ul>
+      <ul>
+        {pokemon.map(({ name: { english }, id }) => (
+          <li key={id}>{english}</li>
+        ))}
+      </ul>
     </div>
   );
 }
