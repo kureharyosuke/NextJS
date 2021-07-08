@@ -18,10 +18,9 @@ app.get('/pokemon', (_, res) => {
 });
 
 app.get('/search', (req, res) => {
+  const q = ((req.query.q as string) ?? '').toLowerCase();
   res.send(
-    pokemon.filter(({ name: { english } }) =>
-      english.includes((req.query.q as string) ?? '')
-    )
+    pokemon.filter(({ name: { english } }) => english.toLowerCase().includes(q))
   );
 });
 
